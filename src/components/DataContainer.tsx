@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
-  Route
-} from "react-router-dom";
+  Route} from "react-router-dom";
 import QuestionCard from './QuestionCard';
-import AnswerButton from './AnswerButton';
-import PageNumber from './PageNumber';
 import LandingPage from './LandingPage';
 import Results from './Results';
 
@@ -23,16 +19,9 @@ const DataContainer: React.FC = () => {
   const [questionInfo, setQuestionInfo] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [answers, setAnswers] = useState([]);
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
 
   const nextQuestion = (e) => {
-    // console.log(answers, 'answers')
-    // console.log(e.target.value, 'event target')
-    // console.log(questionInfo[questionNumber - 1].correct_answer, 'question info')
-    // console.log(score, 'score')
-    if (questionNumber + 1 === 11) {
-      //use react router to reroute
-    }
     e.target.value === questionInfo[questionNumber - 1].correct_answer ? (
         setAnswers([...answers, "+"]),
         setScore(score + 1)
@@ -43,12 +32,18 @@ const DataContainer: React.FC = () => {
   if (isLoading) {
     return <h3>Loading...</h3>
   }
+  if (questionNumber + 1 > 11) {
+    return (<Results 
+      questions={questionInfo}
+      answers={answers}
+      score={score}
+    />)
+  }
   return (
     <div>
-      <Router>
-       <Switch>
+      <Switch>
         <Route exact path="/">
-           <LandingPage />
+          <LandingPage />
         </Route>
         <Route exact path="/quiz">
           <QuestionCard
@@ -56,18 +51,11 @@ const DataContainer: React.FC = () => {
             correctAnswer={questionInfo[questionNumber - 1].correct_answer}
             category={questionInfo[questionNumber - 1].category}
             questionNumber={questionNumber}
+            nextQuestion={nextQuestion} 
           />
-          <AnswerButton nextQuestion={nextQuestion} />
-          <PageNumber questionNumber={questionNumber} />
         </Route>
-
-       
-  
       </Switch>
-      </Router>
     </div>
-    
-    
   )
 };
 export default DataContainer;

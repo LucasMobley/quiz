@@ -2,11 +2,16 @@ import React from 'react';
 import { PageProps } from 'gatsby';
 import DataContainer from '@/components/DataContainer';
 import './index.css';
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 
 
 const Home: React.FC<PageProps> = () => (
-  <main>  
-    <DataContainer />
+  <main>
+    <Router>
+      <DataContainer />
+    </Router>  
   </main>
 );
 

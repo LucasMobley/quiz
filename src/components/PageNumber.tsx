@@ -5,7 +5,7 @@ type QuestionNumber = {
 };
 
 const PageNumber: React.FC<QuestionNumber> = ({ questionNumber }) => (
-  <div>
+  <div className="number">
     <p>{questionNumber} of 10</p>
   </div>
 );

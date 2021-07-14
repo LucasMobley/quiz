@@ -8,14 +8,19 @@ const LandingPage: React.FC = () => {
   }
 
   return (
-    <div>
-      <h3>Welcome to the Trivia Challenge!</h3>
-      <h4>You will be presented with 10 True or False questions.</h4>
-      <h4>Can you score 100%?</h4>
-      <button type="button" onClick={handleClick}>
+    <div className='landingParent'>
+    <div className='landingChild'>
+      <h1>Welcome to the Trivia Challenge!</h1>
+      <br/>
+      <p>You will be presented with 10 True or False questions.</p>
+      <br/>
+      <p>Can you score 100%?</p>
+      <br/>
+      <button className="begin" type="button" onClick={handleClick}>
         BEGIN
       </button>
     </div>
+  </div>
   );
 };
 

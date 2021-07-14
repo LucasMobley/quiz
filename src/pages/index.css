@@ -1,6 +1,86 @@
-.questionCard {
-  border: 1px solid black;
-  width: 400px;
-  height: 400px;
+.parentQuestionCard {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  padding: 10px;
+  font-family: Sans-Serif;
+  height: 500px;
+  width: 500px;
+}
 
+.childQuestionCard {
+  border: 1px solid black;
+  margin: auto;
+  font-family: Sans-Serif;
+  height: 400px;
+  width: 400px;
+  padding: 10px;
+}
+
+.buttons {
+  margin-top: 30px; 
+  text-align: center;
+  font-family: Sans-Serif;
+
+}
+
+.number {
+  text-align: center;
+  font-family: Sans-Serif;
+}
+
+.landinParent {
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  }
+
+.landingChild { 
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Sans-Serif;
+}
+
+.begin {
+  margin:0 auto;
+  display:block;
+}
+
+.resultsPage {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  padding: 10px;
+  font-family: Sans-Serif;
+  height: 500px;
+  width: 500px;
+}
+
+.result {
+  display:flex;
+}
+
+.answerSymbol {
+  font-size: 20px;
+  width: 40px;
+}
+
+.questionText {
+  width: 400px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 20px;
+  font-family: Sans-Serif;
 }

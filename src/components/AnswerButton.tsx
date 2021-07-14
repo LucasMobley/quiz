@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
-type ButtonProps = (e: MouseEvent) => void;
+type ButtonProps = {
+  nextQuestion: (event: MouseEvent) => void;
+}
 
 const AnswerButton: React.FC<ButtonProps> = (props) => (
   <div className="buttons">
