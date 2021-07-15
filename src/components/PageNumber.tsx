@@ -1,5 +1,9 @@
 import React from 'react';
 
+/*
+This is a simple component that recievs the questionNumber prop from DataContainer and renders it as a 
+<p> inside a <div>.
+*/
 type QuestionNumber = {
   questionNumber: number;
 };

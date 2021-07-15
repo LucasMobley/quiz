@@ -1,5 +1,5 @@
 import React, {MouseEvent} from 'react';
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 type ResultProps = {
   questions: any[];
