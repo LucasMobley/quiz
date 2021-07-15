@@ -9,7 +9,7 @@ import Results from './Results';
 /*
 This page is the parent of all other child components.  Because I want all of my
 Data from the quiz API at the highest level of components to enable passing props downstream, I initiate a fetch here and 
-then save my data in State. I fetch an array containing 10 objects.
+then save my data in state. I fetch an array containing 10 objects.
 
 When using the useEffect hook, the initial render of the page will have no data.  
 My first useState hook, setIsLoading initializes isLoading to true. While isLoading is true we render loading... 
@@ -21,8 +21,9 @@ Most of my busisness logic is rendered on each other component. See notes on tho
 My nextQuestion function does much of my logic on this component, saving neccessary information to state.  
 
 I will need to keep track of three things.
-First, I need to track the total number of correct answers. I do this with a direct comparison and ternary operator
-inside the nextQuestion function. I save those results in state using the setScore and setAnswers hooks.
+First, I need to track the total number of correct answers. I do this with a direct comparison using the value prop from my
+True and False buttons from the AnswerButton component and a ternary operator
+inside the nextQuestion function. I save those results in state as an intiger using the setScore and setAnswers hooks.
 Second I need to save the corosponding - or + into state using the setAnswers hook. An array will enable easy access 
 to these on my results page.
 Third, I need to increment the question number of the question that we are on. The question number is 
