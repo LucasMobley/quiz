@@ -71,6 +71,10 @@
   width: 40px;
 }
 
+.playagain {
+  margin: 40px;
+}
+
 .questionText {
   width: 400px;
   text-align: left;
