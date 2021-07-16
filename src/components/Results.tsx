@@ -18,7 +18,7 @@ type ResultProps = {
 const Results: React.FC<ResultProps> = ({questions, answers, score}) => {
   const start = useHistory();
   function playAgain() {
-    start.push(`/`);
+    start.push("/");
     location.reload();
   }
   const results = questions.map((el, index) => {
@@ -27,8 +27,8 @@ const Results: React.FC<ResultProps> = ({questions, answers, score}) => {
       className="result"
       key={index}
     >
-      <p className='answerSymbol'>{answers[index]}</p> 
-      <p className='questionText'>{el.question}</p> 
+      <p className="answerSymbol">{answers[index]}</p> 
+      <p className="questionText">{el.question}</p> 
     </div>
     )
   });
@@ -37,7 +37,7 @@ const Results: React.FC<ResultProps> = ({questions, answers, score}) => {
       <p>You scored</p>
       <h1>{score} / 10</h1>
       <p>{results}</p>
-      <button className='playagain' onClick={playAgain}>PLAY AGAIN?</button>
+      <button className="playagain" onClick={playAgain}>PLAY AGAIN?</button>
     </div>
   )
 }

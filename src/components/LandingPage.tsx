@@ -10,12 +10,12 @@ to route users to the quiz page. The useHistory hook enables users to navigate b
 const LandingPage: React.FC = () => {
   const history = useHistory();
   function handleClick() {
-    history.push(`/quiz`);
+    history.push('/quiz');
   }
 
   return (
-    <div className='landingParent'>
-    <div className='landingChild'>
+    <div className="landingParent">
+    <div className="landingChild">
       <h1>Welcome to the Trivia Challenge!</h1>
       <br/>
       <p>You will be presented with 10 True or False questions.</p>

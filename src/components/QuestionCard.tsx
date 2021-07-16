@@ -15,7 +15,7 @@ type QuestionProps = {
   nextQuestion: (e: MouseEvent) => void;
 };
 const QuestionCard: React.FC<QuestionProps> = ({category, question, questionNumber, nextQuestion}) => (
-  <div className='parentQuestionCard'>
+  <div className="parentQuestionCard">
     <h5>{category}</h5>
     <br/>
     <div className="childQuestionCard">

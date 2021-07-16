@@ -45,23 +45,24 @@ const DataContainer: React.FC = () => {
     .catch(err => console.error(err))
   }, []);
   
-  const [isLoading, setIsLoading] = useState(true);
   const [questionInfo, setQuestionInfo] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
 
   const nextQuestion = (e) => {
     e.target.value === questionInfo[questionNumber - 1].correct_answer ? (
-      setAnswers([...answers, "+"]),
+      setAnswers([...answers, '+']),
       setScore(score + 1)
-      ) : setAnswers([...answers, "-"]);
+      ) : setAnswers([...answers, '-']);
     setQuestionNumber(questionNumber + 1);   
   }
   
   if (isLoading) {
     return <h3>Loading...</h3>
   }
+
   if (questionNumber + 1 > 11) {
     return (<Results 
       questions={questionInfo}
@@ -69,6 +70,7 @@ const DataContainer: React.FC = () => {
       score={score}
     />)
   }
+
   return (
     <div>
       <Switch>
